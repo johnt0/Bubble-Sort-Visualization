@@ -21,13 +21,15 @@ int main()
     std::vector<sf::RectangleShape> vec;
     double size = 1000.0 / 100;
 
+    bool swapped = false;
+
+
     for (int i = 0; i < 100; i++) {
         sf::RectangleShape rec(sf::Vector2f(size, distr(generator)));
         vec.push_back(rec);
     }
-    int temp_i = 0;
-    int temp_j = 0;
-    bool swapped = false;
+
+    
     while (window.isOpen()) {
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed) {
